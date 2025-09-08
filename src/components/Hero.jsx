@@ -1,8 +1,7 @@
 import React from "react";
 import AnimatedTitles from "../utils/AnimatedTitles";
-import { FaFacebook } from "react-icons/fa";
-import { BsTwitter, BsWhatsapp } from "react-icons/bs";
 import { LiaLinkedin } from "react-icons/lia";
+import { BsGithub, BsDiscord } from "react-icons/bs";
 
 const Hero = () => {
   return (
@@ -14,7 +13,7 @@ const Hero = () => {
         {/* Gradient Background */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#011d1d] to-[#022c2b]"></div>
 
-        {/* Dark overlay for contrast */}
+        {/* Dark overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#011d1d] to-[#022c2b]"></div>
 
         {/* Content */}
@@ -38,6 +37,7 @@ const Hero = () => {
               function at a time.
             </p>
 
+            {/* Skills */}
             <div className="mt-6 flex flex-wrap gap-4 text-sm font-medium text-gray-400">
               <span className="px-4 py-2 bg-white/10 backdrop-blur-md rounded-full">
                 Mern Stack Development
@@ -50,28 +50,54 @@ const Hero = () => {
               </span>
             </div>
 
-            {/* Social Icons with hover effects */}
+            {/* Social Icons */}
             <div className="flex gap-5 mt-8 justify-center md:justify-start">
-              <button className="p-3 bg-white/10 rounded-full hover:bg-sky-400 hover:scale-110 transition-transform duration-300 shadow-md hover:shadow-sky-400">
-                <FaFacebook />
-              </button>
-              <button className="p-3 bg-white/10 rounded-full hover:bg-sky-400 hover:scale-110 transition-transform duration-300 shadow-md hover:shadow-sky-400">
-                <BsWhatsapp />
-              </button>
-              <button className="p-3 bg-white/10 rounded-full hover:bg-sky-400 hover:scale-110 transition-transform duration-300 shadow-md hover:shadow-sky-400">
+              <a
+                href="https://github.com/Imawesome77"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-white/10 rounded-full hover:bg-gray-800 hover:scale-110 transition-transform duration-300 shadow-md hover:shadow-gray-500"
+              >
+                <BsGithub />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/vishal-parmar-86108126b"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-white/10 rounded-full hover:bg-blue-500 hover:scale-110 transition-transform duration-300 shadow-md hover:shadow-blue-400"
+              >
                 <LiaLinkedin />
-              </button>
-              <button className="p-3 bg-white/10 rounded-full hover:bg-sky-400 hover:scale-110 transition-transform duration-300 shadow-md hover:shadow-sky-400">
-                <BsTwitter />
-              </button>
+              </a>
+              <a
+                href="https://discord.com/users/vishuu7780"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-white/10 rounded-full hover:bg-indigo-600 hover:scale-110 transition-transform duration-300 shadow-md hover:shadow-indigo-400"
+              >
+                <BsDiscord />
+              </a>
             </div>
 
-            {/* Action Buttons with hover & scale */}
+            {/* Buttons */}
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <button className="px-6 cursor-pointer py-1 rounded-full bg-gradient-to-r from-indigo-500 to-sky-700 font-light text-white hover:opacity-90 hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-indigo-700">
+              {/* View My Works */}
+              <button
+                onClick={() => {
+                  const projectsSection = document.getElementById("projects");
+                  if (projectsSection) {
+                    projectsSection.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+                className="px-6 cursor-pointer py-1 rounded-full bg-gradient-to-r from-indigo-500 to-sky-700 font-light text-white hover:opacity-90 hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-indigo-700"
+              >
                 View My Works
               </button>
-              <button className="px-6 cursor-pointer py-1 rounded-full bg-gradient-to-r from-indigo-500 to-sky-700 font-light text-white hover:opacity-90 hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-indigo-700">
+
+              {/* Download CV */}
+              <button
+                onClick={() => window.open("/resume.pdf", "_blank")}
+                className="px-6 cursor-pointer py-1 rounded-full bg-gradient-to-r from-indigo-500 to-sky-700 font-light text-white hover:opacity-90 hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-indigo-700"
+              >
                 Download CV
               </button>
             </div>
