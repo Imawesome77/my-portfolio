@@ -95,10 +95,14 @@ const Hero = () => {
 
               {/* Download CV */}
               <button
-                onClick={() => window.open("/resume.pdf", "_blank")}
-                className="px-6 cursor-pointer py-1 rounded-full bg-gradient-to-r from-indigo-500 to-sky-700 font-light text-white hover:opacity-90 hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-indigo-700"
+                onClick={() => {
+                  const formSection = document.getElementById("cv-request");
+                  if (formSection)
+                    formSection.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="px-6 py-1 rounded-full bg-gradient-to-r from-indigo-500 to-sky-700 text-white hover:scale-105 transition-transform"
               >
-                Download CV
+                Request CV
               </button>
             </div>
           </div>
